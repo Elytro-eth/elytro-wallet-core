@@ -54,6 +54,10 @@ contract ElytroWalletFactory is Ownable {
      * @return proxy Address of the deployed proxy
      */
     function createWallet(bytes memory _initializer, bytes32 _salt) external returns (address proxy) {
+        /*
+            For testing convenience, the current code does not include SenderCreator.
+            Ref: https://github.com/eth-infinitism/account-abstraction/pull/514
+        */
         bytes memory deploymentData = abi.encodePacked(type(ElytroWalletProxy).creationCode, _WALLETIMPL);
         bytes32 salt = _calcSalt(_initializer, _salt);
         assembly ("memory-safe") {
