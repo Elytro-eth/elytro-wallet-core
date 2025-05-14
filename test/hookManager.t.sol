@@ -11,7 +11,7 @@ import "../contracts/validators/EOAValidator.sol";
 import {ReceiverHandler} from "./dev/ReceiverHandler.sol";
 import {MessageHashUtils} from "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 import {DeployEntryPoint} from "./dev/deployEntryPoint.sol";
-import {SoulWalletFactory} from "./dev/SoulWalletFactory.sol";
+import {ElytroWalletFactory} from "./dev/ElytroWalletFactory.sol";
 import {PackedUserOperation} from "@account-abstraction/contracts/interfaces/PackedUserOperation.sol";
 import {TokenERC20} from "./dev/TokenERC20.sol";
 import {DemoHook} from "./dev/demoHook.sol";
@@ -23,7 +23,7 @@ contract HookManagerTest is Test {
 
     IEntryPoint entryPoint;
 
-    SoulWalletFactory walletFactory;
+    ElytroWalletFactory walletFactory;
     BasicModularAccount walletImpl;
 
     EOAValidator validator;
@@ -40,7 +40,7 @@ contract HookManagerTest is Test {
     function setUp() public {
         entryPoint = new DeployEntryPoint().deploy();
         walletImpl = new BasicModularAccount(address(entryPoint));
-        walletFactory = new SoulWalletFactory(address(walletImpl), address(entryPoint), address(this));
+        walletFactory = new ElytroWalletFactory(address(walletImpl), address(entryPoint), address(this));
         validator = new EOAValidator();
         _fallback = new ReceiverHandler();
         (walletOwner, walletOwnerPrivateKey) = makeAddrAndKey("owner1");

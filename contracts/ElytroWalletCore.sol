@@ -14,7 +14,7 @@ import {SignatureDecoder} from "./utils/SignatureDecoder.sol";
 import {IERC1271} from "@openzeppelin/contracts/interfaces/IERC1271.sol";
 import {UserOperationLib} from "./utils/UserOperationLib.sol";
 
-contract SoulWalletCore is
+contract ElytroWalletCore is
     IAccount,
     IERC1271,
     EntryPointManager,

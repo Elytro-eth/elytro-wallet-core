@@ -11,9 +11,5 @@ evm_version = "cancun"
 bytecode_hash = "none"
 cbor_metadata = false
 
-# [profile.default.model_checker]
-# contracts = { './contracts/SoulWalletCore.sol' = ['Contract'] }
-# engine = 'all'
-# timeout = 10000
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

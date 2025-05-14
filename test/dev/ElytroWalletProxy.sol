@@ -2,11 +2,11 @@
 pragma solidity ^0.8.28;
 
 /**
- * @title SoulWalletProxy
+ * @title ElytroWalletProxy
  * @notice A proxy contract that forwards calls to an implementation contract
  * @dev This proxy uses the EIP-1967 standard for storage slots
  */
-contract SoulWalletProxy {
+contract ElytroWalletProxy {
     /**
      * @notice Storage slot with the address of the current implementation
      * @dev This is the keccak-256 hash of "eip1967.proxy.implementation" subtracted by 1

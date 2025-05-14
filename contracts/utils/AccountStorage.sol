@@ -3,9 +3,10 @@ pragma solidity ^0.8.28;
 
 /**
  * @title AccountStorage
- * @notice A library that defines the storage layout for the SoulWallet account or contract.
+ * @notice A library that defines the storage layout for the ElytroWallet account or contract.
  */
 library AccountStorage {
+    // Forward compatibility, storage slot must not be changed.
     bytes32 internal constant _ACCOUNT_SLOT = keccak256("soulwallet.contracts.AccountStorage");
 
     struct Layout {

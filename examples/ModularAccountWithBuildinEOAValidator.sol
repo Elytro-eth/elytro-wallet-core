@@ -2,7 +2,7 @@
 pragma solidity ^0.8.28;
 
 import {PackedUserOperation} from "../contracts/interface/IAccount.sol";
-import {SoulWalletCore} from "../contracts/SoulWalletCore.sol";
+import {ElytroWalletCore} from "../contracts/ElytroWalletCore.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import {MessageHashUtils} from "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 import {OwnerManagerSnippet} from "../contracts/snippets/OwnerManager.sol";
@@ -73,7 +73,7 @@ contract ModularAccountWithBuildinEOAValidator is
     ValidatorInstaller,
     HookInstaller,
     ModuleInstaller,
-    SoulWalletCore,
+    ElytroWalletCore,
     BuildinEOAValidator
 {
     uint256 private _initialized;
@@ -84,7 +84,7 @@ contract ModularAccountWithBuildinEOAValidator is
         _;
     }
 
-    constructor(address _entryPoint) SoulWalletCore(_entryPoint) initializer {}
+    constructor(address _entryPoint) ElytroWalletCore(_entryPoint) initializer {}
 
     function initialize(bytes32 owner) external initializer {
         _addOwner(owner);

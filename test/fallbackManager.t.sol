@@ -10,7 +10,7 @@ import "../contracts/validators/EOAValidator.sol";
 import {ReceiverHandler} from "./dev/ReceiverHandler.sol";
 import {MessageHashUtils} from "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 import {DeployEntryPoint} from "./dev/deployEntryPoint.sol";
-import {SoulWalletFactory} from "./dev/SoulWalletFactory.sol";
+import {ElytroWalletFactory} from "./dev/ElytroWalletFactory.sol";
 import {PackedUserOperation} from "@account-abstraction/contracts/interfaces/PackedUserOperation.sol";
 import {SIG_VALIDATION_FAILED, SIG_VALIDATION_SUCCESS} from "../contracts/utils/Constants.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
@@ -20,7 +20,7 @@ contract FallbackManagerTest is Test {
 
     IEntryPoint entryPoint;
 
-    SoulWalletFactory walletFactory;
+    ElytroWalletFactory walletFactory;
     BasicModularAccount walletImpl;
 
     EOAValidator validator;
@@ -34,7 +34,7 @@ contract FallbackManagerTest is Test {
     function setUp() public {
         entryPoint = new DeployEntryPoint().deploy();
         walletImpl = new BasicModularAccount(address(entryPoint));
-        walletFactory = new SoulWalletFactory(address(walletImpl), address(entryPoint), address(this));
+        walletFactory = new ElytroWalletFactory(address(walletImpl), address(entryPoint), address(this));
         validator = new EOAValidator();
         _fallback = new ReceiverHandler();
         (walletOwner, walletOwnerPrivateKey) = makeAddrAndKey("owner1");

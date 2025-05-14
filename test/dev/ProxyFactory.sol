@@ -12,8 +12,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title ProxyFactory
- * @author soulwallet team
- * @notice A factory contract to create soul wallets
+ * @author ElytroWallet team
+ * @notice A factory contract to create Elytro Wallet
  * @dev This contract is called by the entrypoint which uses the "initCode" to create and return the sender's wallet address
  */
 contract ProxyFactory is Ownable {
@@ -23,7 +23,7 @@ contract ProxyFactory is Ownable {
 
     /**
      * @dev Initializes the factory with the wallet implementation and entry point addresses
-     * @param _walletImpl Address of the SoulWallet implementation
+     * @param _walletImpl Address of the ElytroWallet implementation
      * @param _entryPoint Address of the EntryPoint contract
      * @param _owner Address of the contract owner
      */
@@ -56,7 +56,7 @@ contract ProxyFactory is Ownable {
     }
 
     /**
-     * @dev Deploys the SoulWallet using a proxy and returns the proxy's address
+     * @dev Deploys the ElytroWallet using a proxy and returns the proxy's address
      * @param _initializer Initialization data
      * @param _salt Salt for the create2 deployment
      * @return proxy Address of the deployed proxy
@@ -74,10 +74,10 @@ contract ProxyFactory is Ownable {
     }
 
     /**
-     * @notice Calculates the counterfactual address of the SoulWallet as it would be returned by `createWallet`
+     * @notice Calculates the counterfactual address of the ElytroWallet as it would be returned by `createWallet`
      * @param _initializer Initialization data
      * @param _salt Salt for the create2 deployment
-     * @return proxy Counterfactual address of the SoulWallet
+     * @return proxy Counterfactual address of the ElytroWallet
      */
     function getWalletAddress(bytes memory _initializer, bytes32 _salt) external view returns (address proxy) {
         bytes memory deploymentData = getDeploymentData();
