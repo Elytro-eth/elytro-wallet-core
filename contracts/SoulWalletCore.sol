@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.23;
+pragma solidity ^0.8.28;
 
 import {IAccount, PackedUserOperation} from "./interface/IAccount.sol";
 import {EntryPointManager} from "./base/EntryPointManager.sol";

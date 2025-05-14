@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.23;
+pragma solidity ^0.8.28;
 
 import {BasicModularAccount} from "./BasicModularAccount.sol";
 import {ModuleInstaller} from "../contracts/extensions/ModuleInstaller.sol";
