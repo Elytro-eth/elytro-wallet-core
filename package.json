@@ -1,5 +1,5 @@
 {
-    "name": "soulwalletcore",
+    "name": "elytrowalletcore",
     "type": "module",
     "scripts": {
         "build": "forge build --sizes",

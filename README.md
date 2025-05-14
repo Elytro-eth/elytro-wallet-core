@@ -1,17 +1,17 @@
-# SoulWalletCore
+# ElytroWalletCore
 
-SoulWalletCore is a flexible and reusable smart contract wallet framework compliant with the EIP-4337 standard. It aims to provide a simple, adaptable, and easily integrable foundation for various wallet functionalities and extensions.
+ElytroWalletCore is a flexible and reusable smart contract wallet framework compliant with the EIP-4337 standard. It aims to provide a simple, adaptable, and easily integrable foundation for various wallet functionalities and extensions.
 
 ## ⚠️ Disclaimer
 
-Although **SoulWalletCore has been audited (thanks to SlowMist)**, it is important to note that the functions provided by this library are highly flexible. Users and developers should exercise caution and use at their own risk.
+Although **ElytroWalletCore has been audited (thanks to SlowMist)**, it is important to note that the functions provided by this library are highly flexible. Users and developers should exercise caution and use at their own risk.
 
 ## Features
 
 - **EIP-4337 Compliant**: Ensures alignment with the latest developments in the Ethereum community.
 - **Modular Design**: Facilitates easy addition or removal of features by developers according to their needs.
 - **Reusability**: Designed for easy reuse across different projects.
-- **Wallet Implementation Examples**: Includes multiple wallet examples based on SoulWalletCore to help developers get started quickly.
+- **Wallet Implementation Examples**: Includes multiple wallet examples based on ElytroWalletCore to help developers get started quickly.
 
 ## Directory Structure
 
@@ -21,29 +21,29 @@ Although **SoulWalletCore has been audited (thanks to SlowMist)**, it is importa
   - `snippets/` - Reusable code snippets.
   - `utils/` - Utility and helper contracts.
   - `validators/` - Contracts related to validators.
-- `examples/` - Examples of wallets developed based on SoulWalletCore.
+- `examples/` - Examples of wallets developed based on ElytroWalletCore.
 
 ## Getting Started
 
-To start using SoulWalletCore, clone the repository:
+To start using ElytroWalletCore, clone the repository:
 
 ```sh
-git clone https://github.com/SoulWallet/SoulWalletCore.git
-cd SoulWalletCore
+git clone https://github.com/Elytro-eth/ElytroWalletCore.git
+cd ElytroWalletCore
 ```
 
 Next, choose or modify the contract examples as per your requirements.
 
 ## Example Usage
 
-Refer to the examples in the `examples/` directory to understand how to build custom wallets based on SoulWalletCore.
+Refer to the examples in the `examples/` directory to understand how to build custom wallets based on ElytroWalletCore.
 
 - [BasicModularAccount](examples/BasicModularAccount.sol): A basic example of a modular account.
 - [CustomAccessModularAccount](examples/CustomAccessModularAccount.sol): An example with custom permission.
 - [AddFunctionDemo](examples/AddFunctionDemo/): An implementation example with a custom function added.
 - [ModularAccountWithBuildinEOAValidator](examples/ModularAccountWithBuildinEOAValidator.sol): An example of a modular account with built-in EOA signature validation.
 - [UpgradableModularAccount](examples/UpgradableModularAccount.sol): An example of an upgradable modular account.
-  - Note: Due to the flexibility in implementing upgradable contracts, it is not implemented in SoulWalletCore. However, you can refer to this example.
+  - Note: Due to the flexibility in implementing upgradable contracts, it is not implemented in ElytroWalletCore. However, you can refer to this example.
 
 ## Contributions
 
@@ -51,14 +51,4 @@ We welcome contributions in any form, be it feature enhancements, bug reports, o
 
 ## License
 
-This project is licensed under the [GPL-3.0 License](LICENSE)
-
-### License Clarification
-
-This project makes use of code from the [eth-infinitism/account-abstraction](https://github.com/eth-infinitism/account-abstraction) repository, which is licensed under the GPL-3.0 license. However, all code developed for this project is based on the MIT license.
-
-#### Using Our Code in Non-GPL-3.0 Projects
-
-If you intend to use our code in projects that are not licensed under GPL-3.0, you can directly copy the files that are independently licensed under MIT from our repository into your project. This approach ensures compliance with the MIT license, provided that the copied files are standalone and do not depend on any GPL-3.0 licensed code from our project.
-
-Please be aware that while you are free to use, modify, and distribute these MIT-licensed files, the GPL-3.0 licensed code from the eth-infinitism/account-abstraction repository may impose certain restrictions if used in your projects. It is important to ensure that your use of these files adheres to the respective license terms.
+This project is licensed under the [MIT License](LICENSE)

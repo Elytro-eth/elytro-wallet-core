@@ -124,7 +124,7 @@ contract CalldataPackTest is Test {
         return userOperation;
     }
 
-    function test_pack1() public {
+    function test_pack1() public view {
         PackedUserOperation memory userOp = getUserOp();
         bytes32 userOpHash = hex"0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a";
         bytes memory validatorSignature = hex"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";

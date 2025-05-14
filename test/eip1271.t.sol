@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.23;
+pragma solidity ^0.8.28;
 
 import "forge-std/Test.sol";
 import {IOwnerManager} from "../contracts/interface/IOwnerManager.sol";
@@ -9,13 +9,13 @@ import "../contracts/validators/EOAValidator.sol";
 import {ReceiverHandler} from "./dev/ReceiverHandler.sol";
 import {MessageHashUtils} from "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 import {DeployEntryPoint} from "./dev/deployEntryPoint.sol";
-import {SoulWalletFactory} from "./dev/SoulWalletFactory.sol";
+import {ElytroWalletFactory} from "./dev/ElytroWalletFactory.sol";
 import {DemoHook} from "./dev/demoHook.sol";
 
 contract EIP1271Test is Test {
     using MessageHashUtils for bytes32;
 
-    SoulWalletFactory walletFactory;
+    ElytroWalletFactory walletFactory;
     BasicModularAccount walletImpl;
 
     EOAValidator validator;
@@ -29,7 +29,7 @@ contract EIP1271Test is Test {
 
     function setUp() public {
         walletImpl = new BasicModularAccount(address(this));
-        walletFactory = new SoulWalletFactory(address(walletImpl), address(this), address(this));
+        walletFactory = new ElytroWalletFactory(address(walletImpl), address(this), address(this));
         validator = new EOAValidator();
         _fallback = new ReceiverHandler();
         (walletOwner, walletOwnerPrivateKey) = makeAddrAndKey("owner1");
@@ -76,7 +76,7 @@ contract EIP1271Test is Test {
 
     bytes4 private constant MAGICVALUE = bytes4(keccak256("isValidSignature(bytes32,bytes)"));
 
-    function test_EIP1271() public {
+    function test_EIP1271() public view {
         bytes32 hash1 = keccak256("test1");
         bytes32 hash2 = keccak256("test2");
         bytes memory signature1 = signMsg(address(wallet), hash1);

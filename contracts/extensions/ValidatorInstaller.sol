@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.23;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
 
 import {AuthoritySnippet} from "../snippets/Authority.sol";
 import {ValidatorManagerSnippet} from "../snippets/ValidatorManager.sol";

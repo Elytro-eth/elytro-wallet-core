@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.23;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
 
 import "forge-std/Test.sol";
 import {BasicModularAccount} from "../../examples/BasicModularAccount.sol";
@@ -126,8 +126,12 @@ contract GasCheckerTest is Test {
         outPutGasCost("Deploy Account", gasCost);
     }
 
-    function outPutGasCost(string memory name, uint256 gasCost) private view {
-        console.log("gasChecker\t", name, "\t", gasCost);
+    function outPutGasCost(string memory name, uint256 gasCost) private pure {
+        console.log("gasChecker:");
+        console.log(name);
+        // console.logUint(...) is unavailable in some cases, convert the value to hex instead.
+        bytes32 _gasCost = bytes32(gasCost);
+        console.logBytes32(_gasCost);
     }
 
     function testETHTransfer() public {

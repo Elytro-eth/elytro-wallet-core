@@ -1,12 +1,12 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.23;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.28;
 
-import {SoulWalletCore} from "../contracts/SoulWalletCore.sol";
+import {ElytroWalletCore} from "../contracts/ElytroWalletCore.sol";
 import {ModuleInstaller} from "../contracts/extensions/ModuleInstaller.sol";
 import {HookInstaller} from "../contracts/extensions/HookInstaller.sol";
 import {ValidatorInstaller} from "../contracts/extensions/ValidatorInstaller.sol";
 
-contract BasicModularAccount is SoulWalletCore, ValidatorInstaller, HookInstaller, ModuleInstaller {
+contract BasicModularAccount is ElytroWalletCore, ValidatorInstaller, HookInstaller, ModuleInstaller {
     uint256 private _initialized;
 
     modifier initializer() {
@@ -15,7 +15,7 @@ contract BasicModularAccount is SoulWalletCore, ValidatorInstaller, HookInstalle
         _;
     }
 
-    constructor(address _entryPoint) SoulWalletCore(_entryPoint) initializer {}
+    constructor(address _entryPoint) ElytroWalletCore(_entryPoint) initializer {}
 
     function initialize(
         bytes32 owner,
