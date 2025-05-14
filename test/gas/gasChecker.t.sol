@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
 import "forge-std/Test.sol";
@@ -126,7 +126,7 @@ contract GasCheckerTest is Test {
         outPutGasCost("Deploy Account", gasCost);
     }
 
-    function outPutGasCost(string memory name, uint256 gasCost) private view {
+    function outPutGasCost(string memory name, uint256 gasCost) private pure {
         console.log("gasChecker:");
         console.log(name);
         // console.logUint(...) is unavailable in some cases, convert the value to hex instead.

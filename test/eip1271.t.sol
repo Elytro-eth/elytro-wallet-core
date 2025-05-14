@@ -76,7 +76,7 @@ contract EIP1271Test is Test {
 
     bytes4 private constant MAGICVALUE = bytes4(keccak256("isValidSignature(bytes32,bytes)"));
 
-    function test_EIP1271() public {
+    function test_EIP1271() public view {
         bytes32 hash1 = keccak256("test1");
         bytes32 hash2 = keccak256("test2");
         bytes memory signature1 = signMsg(address(wallet), hash1);

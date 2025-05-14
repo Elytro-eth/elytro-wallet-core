@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.7.5;
 
 // refer: https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/interfaces/IAccountExecute.sol

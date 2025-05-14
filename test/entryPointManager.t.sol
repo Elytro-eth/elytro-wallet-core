@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
 import "forge-std/Test.sol";
@@ -87,7 +87,7 @@ contract EntryPointManagerTest is Test {
         userOperation.signature = _signature;
     }
 
-    function test_EntryPoint() public {
+    function test_EntryPoint() public view {
         assertEq(wallet.entryPoint(), address(entryPoint));
     }
 }
