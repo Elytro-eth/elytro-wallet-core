@@ -127,7 +127,11 @@ contract GasCheckerTest is Test {
     }
 
     function outPutGasCost(string memory name, uint256 gasCost) private view {
-        console.log("gasChecker\t", name, "\t", gasCost);
+        console.log("gasChecker:");
+        console.log(name);
+        // console.logUint(...) is unavailable in some cases, convert the value to hex instead.
+        bytes32 _gasCost = bytes32(gasCost);
+        console.logBytes32(_gasCost);
     }
 
     function testETHTransfer() public {

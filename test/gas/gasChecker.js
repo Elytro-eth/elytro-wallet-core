@@ -17,14 +17,16 @@ const lines = result.stdout.split('\n');
 const map = new Map();
 
 for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    if (line.startsWith("  gasChecker\t")) {
-        const gasInfo = line.split('\t');
-        const name = gasInfo[1].trim();
-        const gasUsed = parseInt(gasInfo[2].trim());
+    let line = lines[i];
+    line = line.trim();
+    if (line === "gasChecker:") {
+        const name = lines[i + 1].trim();
+        const gasUsed = parseInt(lines[i + 2].trim(), 16);
         map.set(name, gasUsed);
+        i += 2;
     }
 }
+
 
 // print gas change
 let gasChangeLog = '';
