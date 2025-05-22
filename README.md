@@ -28,8 +28,8 @@ Although **ElytroWalletCore has been audited (thanks to SlowMist)**, it is impor
 To start using ElytroWalletCore, clone the repository:
 
 ```sh
-git clone https://github.com/Elytro-eth/ElytroWalletCore.git
-cd ElytroWalletCore
+git clone https://github.com/Elytro-eth/elytro-wallet-core.git
+cd elytro-wallet-core
 ```
 
 Next, choose or modify the contract examples as per your requirements.
