@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.7.5;
+pragma solidity ^0.8.28;
 
 // refer: https://github.com/eth-infinitism/account-abstraction/blob/develop/contracts/interfaces/IAccountExecute.sol
 
